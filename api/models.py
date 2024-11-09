@@ -1,0 +1,59 @@
+from pydantic import BaseModel
+
+class DubbingRequest(BaseModel):
+    media_file: None
+    link_media: str
+    directory_input: str
+    YOUR_HF_TOKEN: str
+    preview: bool
+    transcriber_model: str
+    batch_size: int
+    compute_type: str
+    origin_language: str
+    target_language: str
+    min_speakers: int
+    max_speakers: int
+    tts_voice00: str
+    tts_voice01: str
+    video_output_name: str
+    mix_method_audio: str
+    max_accelerate_audio: float
+    acceleration_rate_regulation: bool
+    volume_original_audio: float
+    volume_translated_audio: float
+    output_format_subtitle: str
+    get_translated_text: bool
+    get_video_from_text_json: bool
+    text_json: str
+    avoid_overlap: bool
+    vocal_refinement: bool
+    literalize_numbers: bool
+    segment_duration_limit: int
+    diarization_model: str
+    translate_process: str
+    subtitle_file: None
+    output_type: str
+    voiceless_track: bool
+    voice_imitation: bool
+    voice_imitation_max_segments: int
+    voice_imitation_vocals_dereverb: bool
+    voice_imitation_remove_previous: bool
+    voice_imitation_method: str
+    dereverb_automatic_xtts: bool
+    text_segmentation_scale: str
+    divide_text_segments_by: str
+    soft_subtitles_to_video: bool
+    burn_subtitles_to_video: bool
+    enable_cache: bool
+    custom_voices: bool
+    custom_voices_workers: int
+    
+    
+class DubbingResponse(BaseModel):
+    media_file: str
+    lang_code: str
+    media_out_name: str
+    extension: str
+    file_obj: str
+    soft_subtitles: bool
+    subtitle_files: str
